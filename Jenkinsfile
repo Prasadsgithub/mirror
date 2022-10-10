@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'JDK8-GOL'}
+    agent { label 'JAVA8-GOL'}
     options {
         timeout(time: 1, unit: 'HOURS')
     }
