@@ -11,12 +11,12 @@ pipeline {
             steps {
                 git url: 'https://github.com/Prasadsgithub/game-of-life.git', 
                 branch: 'features'
-            }    
+            }   
         }
         stage('Build the code and sonarqube analysis') {
             steps {
-                withSonarQubeEnv(SONAR_LATEST') {
-                    'sh script: 'mvn package'
+                withSonarQubeEnv('SONAR_LATEST') {
+                    sh script: 'mvn package'
                 }
 
                 // stash name: 'gameoflife-build' , includes: 'target/*.jar'
