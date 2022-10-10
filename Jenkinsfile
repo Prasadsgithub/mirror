@@ -15,7 +15,9 @@ pipeline {
         }
         stage('Build the code and sonarqube analysis') {
             steps {
-                sh script: 'mvn clean package'
+                withSonarQubeEnv('SONAR_LATEST') {
+                    sh script: 'mvn clean package'
+                    }   
             }
               // stash name: 'gameoflife-build' , includes: 'target/*.jar'
         }  
