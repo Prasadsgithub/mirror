@@ -16,7 +16,7 @@ pipeline {
         stage('Build the code and sonarqube analysis') {
             steps {
                 withSonarQubeEnv('SONAR_LATEST') {
-                    sh 'mvn install'
+                    sh 'mvn install sonarq:sonarq'
                 }   
             }
         }  
