@@ -21,7 +21,7 @@ pipeline {
         }  
         stage('reporting') {
             steps {
-                junit testResults: 'target/surefire-reports/*.xml'
+                junit testResults: '**/surefire-reports/*.xml'
             }
         }
     }
