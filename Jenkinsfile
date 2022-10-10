@@ -19,7 +19,7 @@ pipeline {
                     'sh script: 'mvn package'
                 }
 
-                stash name: 'gameoflife-build' , includes: 'target/*.jar'
+                // stash name: 'gameoflife-build' , includes: 'target/*.jar'
             }
         }   
         stage('reporting') {
