@@ -16,11 +16,10 @@ pipeline {
         stage('Build the code and sonarqube analysis') {
             steps {
                     sh script: 'mvn clean package'
-                }
+            }
 
                 // stash name: 'gameoflife-build' , includes: 'target/*.jar'
-            }
-        }   
+        }  
         stage('reporting') {
             steps {
                 junit testResults: 'target/surefire-reports/*.xml'
