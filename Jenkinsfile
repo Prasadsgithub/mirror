@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SONAR_LATEST') {
                     sh 'mvn clean package sonar:sonar'
-                    }   
+                }   
             }
               // stash name: 'gameoflife-build' , includes: 'target/*.jar'
         }  
