@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'JDK8-GOL'}
+    agent { label 'JDK8'}
     options {
         timeout(time: 1, unit: 'HOURS')
     }
@@ -9,14 +9,14 @@ pipeline {
     stages {
         stage('sourcecode') {
             steps {
-                git url: 'https://github.com/Prasadsgithub/spring-petclinic.git', 
+                git url: 'https://github.com/Prasadsgithub/game-of-life.git', 
                 branch: 'features'
             }   
         }
         stage('Build the code and sonarqube analysis') {
             steps {
                 withSonarQubeEnv('SONAR_LATEST') {
-                    sh 'mvn clean package sonar:sonar'
+                    sh 'mvn clean package'
                 }   
             }
         }  
